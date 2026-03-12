@@ -1,41 +1,142 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f0a1e;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#151030;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d0b1a;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#100b20" />
+      <stop offset="50%" style="stop-color:#161035" />
+      <stop offset="100%" style="stop-color:#0e0c1c" />
     </linearGradient>
-    <linearGradient id="k" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:1" />
+    <linearGradient id="kGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" style="stop-color:#a5b4fc" />
+      <stop offset="40%" style="stop-color:#818cf8" />
+      <stop offset="100%" style="stop-color:#6366f1" />
     </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:0" />
+    </radialGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <!-- Background -->
   <rect width="400" height="400" rx="80" fill="url(#bg)"/>
 
-  <!-- Subtle orbs -->
-  <circle cx="80" cy="80" r="120" fill="#6366f1" opacity="0.08"/>
-  <circle cx="320" cy="320" r="100" fill="#8b5cf6" opacity="0.06"/>
+  <!-- Ambient glow behind the K -->
+  <circle cx="200" cy="190" r="140" fill="url(#centerGlow)"/>
 
-  <!-- Knowledge graph nodes (subtle background) -->
-  <g opacity="0.15">
-    <circle cx="100" cy="120" r="4" fill="#818cf8"/>
-    <circle cx="160" cy="80" r="3" fill="#a78bfa"/>
-    <circle cx="300" cy="300" r="4" fill="#818cf8"/>
-    <circle cx="260" cy="330" r="3" fill="#a78bfa"/>
-    <line x1="100" y1="120" x2="160" y2="80" stroke="#6366f1" stroke-width="1"/>
-    <line x1="300" y1="300" x2="260" y2="330" stroke="#6366f1" stroke-width="1"/>
+  <!-- Subtle ambient orbs -->
+  <circle cx="70" cy="70" r="100" fill="#6366f1" opacity="0.05"/>
+  <circle cx="340" cy="330" r="80" fill="#8b5cf6" opacity="0.04"/>
+  <circle cx="350" cy="80" r="60" fill="#a78bfa" opacity="0.03"/>
+
+  <!-- Knowledge graph — top-left cluster -->
+  <g opacity="0.2">
+    <line x1="72" y1="108" x2="118" y2="78" stroke="#6366f1" stroke-width="1"/>
+    <line x1="118" y1="78" x2="148" y2="112" stroke="#818cf8" stroke-width="0.8"/>
+    <line x1="72" y1="108" x2="88" y2="148" stroke="#6366f1" stroke-width="0.8"/>
+    <circle cx="72" cy="108" r="3.5" fill="#818cf8" filter="url(#nodeGlow)"/>
+    <circle cx="118" cy="78" r="2.5" fill="#a78bfa"/>
+    <circle cx="148" cy="112" r="2" fill="#818cf8"/>
+    <circle cx="88" cy="148" r="2" fill="#a78bfa"/>
   </g>
 
-  <!-- K lettermark -->
-  <text x="200" y="260" font-family="ui-monospace, 'SF Mono', 'Cascadia Code', 'Fira Code', Menlo, monospace"
-        font-size="220" font-weight="700" fill="url(#k)" text-anchor="middle" letter-spacing="-8">
-    K
-  </text>
+  <!-- Knowledge graph — bottom-right cluster -->
+  <g opacity="0.2">
+    <line x1="290" y1="298" x2="330" y2="275" stroke="#6366f1" stroke-width="1"/>
+    <line x1="330" y1="275" x2="340" y2="315" stroke="#818cf8" stroke-width="0.8"/>
+    <line x1="290" y1="298" x2="260" y2="330" stroke="#6366f1" stroke-width="0.8"/>
+    <circle cx="290" cy="298" r="3" fill="#818cf8" filter="url(#nodeGlow)"/>
+    <circle cx="330" cy="275" r="2.5" fill="#a78bfa"/>
+    <circle cx="340" cy="315" r="2" fill="#818cf8"/>
+    <circle cx="260" cy="330" r="2" fill="#a78bfa"/>
+  </g>
 
-  <!-- Small heartbeat ring -->
-  <circle cx="310" cy="130" r="20" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-  <circle cx="310" cy="130" r="35" fill="none" stroke="#818cf8" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="310" cy="130" r="4" fill="#a78bfa" opacity="0.5"/>
+  <!-- Knowledge graph — top-right accent -->
+  <g opacity="0.12">
+    <line x1="310" y1="90" x2="345" y2="110" stroke="#818cf8" stroke-width="0.7"/>
+    <circle cx="310" cy="90" r="2" fill="#a78bfa"/>
+    <circle cx="345" cy="110" r="1.5" fill="#818cf8"/>
+  </g>
+
+  <!-- Knowledge graph — bottom-left accent -->
+  <g opacity="0.12">
+    <line x1="65" y1="290" x2="95" y2="310" stroke="#818cf8" stroke-width="0.7"/>
+    <circle cx="65" cy="290" r="2" fill="#a78bfa"/>
+    <circle cx="95" cy="310" r="1.5" fill="#818cf8"/>
+  </g>
+
+  <!-- Heartbeat rings — positioned at top right, partially behind K -->
+  <g opacity="0.18">
+    <circle cx="305" cy="135" r="18" fill="none" stroke="#6366f1" stroke-width="1.5"/>
+    <circle cx="305" cy="135" r="32" fill="none" stroke="#818cf8" stroke-width="0.8"/>
+    <circle cx="305" cy="135" r="46" fill="none" stroke="#a78bfa" stroke-width="0.4"/>
+    <circle cx="305" cy="135" r="4" fill="#818cf8" filter="url(#nodeGlow)"/>
+  </g>
+
+  <!-- The K — main lettermark -->
+  <g filter="url(#softGlow)">
+    <!-- K built from geometric paths for crisp edges -->
+    <path d="
+      M 128,108
+      L 128,292
+      L 172,292
+      L 172,218
+      L 250,292
+      L 306,292
+      L 214,206
+      L 298,108
+      L 244,108
+      L 172,196
+      L 172,108
+      Z
+    " fill="url(#kGrad)"/>
+  </g>
+
+  <!-- Subtle inner highlight on the K -->
+  <path d="
+    M 138,118
+    L 138,282
+    L 162,282
+    L 162,212
+    L 248,292
+    L 290,292
+    L 208,206
+    L 286,118
+    L 250,118
+    L 172,200
+    L 172,118
+    Z
+  " fill="white" opacity="0.04"/>
+
+  <!-- Micro grid dots — sparse, ambient -->
+  <g opacity="0.06">
+    <circle cx="50" cy="50" r="1" fill="#a78bfa"/>
+    <circle cx="100" cy="50" r="1" fill="#a78bfa"/>
+    <circle cx="150" cy="50" r="1" fill="#a78bfa"/>
+    <circle cx="250" cy="50" r="1" fill="#a78bfa"/>
+    <circle cx="300" cy="50" r="1" fill="#a78bfa"/>
+    <circle cx="350" cy="50" r="1" fill="#a78bfa"/>
+    <circle cx="50" cy="350" r="1" fill="#a78bfa"/>
+    <circle cx="100" cy="350" r="1" fill="#a78bfa"/>
+    <circle cx="150" cy="350" r="1" fill="#a78bfa"/>
+    <circle cx="250" cy="350" r="1" fill="#a78bfa"/>
+    <circle cx="300" cy="350" r="1" fill="#a78bfa"/>
+    <circle cx="350" cy="350" r="1" fill="#a78bfa"/>
+  </g>
 </svg>
