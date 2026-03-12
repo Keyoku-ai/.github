@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#100b20" />
+      <stop offset="50%" style="stop-color:#161035" />
+      <stop offset="100%" style="stop-color:#0e0c1c" />
+    </linearGradient>
+    <linearGradient id="keyGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4b5fd" />
+      <stop offset="35%" style="stop-color:#a5b4fc" />
+      <stop offset="100%" style="stop-color:#6366f1" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="40%" r="32%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.18" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" rx="80" fill="url(#bg)"/>
+
+  <!-- Ambient glow -->
+  <circle cx="200" cy="160" r="130" fill="url(#centerGlow)"/>
+
+  <!-- Subtle orbs -->
+  <circle cx="90" cy="90" r="80" fill="#6366f1" opacity="0.04"/>
+  <circle cx="320" cy="330" r="70" fill="#8b5cf6" opacity="0.03"/>
+
+  <!-- Glow behind key -->
+  <g opacity="0.4" filter="url(#glow)">
+    <path d="
+      M 200,80
+      L 242,104 L 242,160 L 210,178
+      L 210,312 L 190,312 L 190,178
+      L 158,160 L 158,104
+      Z
+    " fill="#818cf8"/>
+  </g>
+
+  <!-- === SINGLE UNIFIED KEY PATH === -->
+  <!-- Outer shape: hex bow flows seamlessly into shaft + teeth -->
+  <!-- fill-rule evenodd creates the hollow center in the bow -->
+  <path fill-rule="evenodd" fill="url(#keyGrad)" d="
+    M 200,80
+    L 242,104
+    L 242,160
+    L 210,178
+    L 210,242
+    L 242,242
+    L 242,258
+    L 210,258
+    L 210,270
+    L 232,270
+    L 232,286
+    L 210,286
+    L 210,298
+    L 242,298
+    L 242,314
+    L 190,314
+    L 190,178
+    L 158,160
+    L 158,104
+    Z
+
+    M 200,104
+    L 222,118
+    L 222,146
+    L 200,160
+    L 178,146
+    L 178,118
+    Z
+  "/>
+
+  <!-- Node dot at center of bow -->
+  <circle cx="200" cy="132" r="8" fill="#c4b5fd" filter="url(#nodeGlow)" opacity="0.75"/>
+  <circle cx="200" cy="132" r="3.5" fill="white" opacity="0.2"/>
+
+  <!-- Node dots at teeth tips -->
+  <circle cx="242" cy="250" r="4" fill="#a5b4fc" filter="url(#nodeGlow)" opacity="0.5"/>
+  <circle cx="232" cy="278" r="3.5" fill="#9590d8" filter="url(#nodeGlow)" opacity="0.4"/>
+  <circle cx="242" cy="306" r="4" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.5"/>
+
+  <!-- Grid dots -->
+  <g opacity="0.04">
+    <circle cx="50" cy="45" r="1" fill="#a78bfa"/>
+    <circle cx="150" cy="45" r="1" fill="#a78bfa"/>
+    <circle cx="250" cy="45" r="1" fill="#a78bfa"/>
+    <circle cx="350" cy="45" r="1" fill="#a78bfa"/>
+    <circle cx="50" cy="355" r="1" fill="#a78bfa"/>
+    <circle cx="150" cy="355" r="1" fill="#a78bfa"/>
+    <circle cx="250" cy="355" r="1" fill="#a78bfa"/>
+    <circle cx="350" cy="355" r="1" fill="#a78bfa"/>
+  </g>
+</svg>
