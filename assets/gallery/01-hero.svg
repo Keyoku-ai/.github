@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1270" height="760" viewBox="0 0 1270 760">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap');
+    </style>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#100b20" />
+      <stop offset="50%" style="stop-color:#161035" />
+      <stop offset="100%" style="stop-color:#0e0c1c" />
+    </linearGradient>
+    <linearGradient id="keyGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4b5fd" />
+      <stop offset="35%" style="stop-color:#a5b4fc" />
+      <stop offset="100%" style="stop-color:#6366f1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1" />
+      <stop offset="50%" style="stop-color:#8b5cf6" />
+      <stop offset="100%" style="stop-color:#a78bfa" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="25%" cy="50%" r="35%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.14" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="40%" r="32%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.18" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1270" height="760" fill="url(#bg)"/>
+
+  <!-- Ambient glow behind key -->
+  <circle cx="300" cy="380" r="280" fill="url(#glow1)"/>
+
+  <!-- Subtle orbs -->
+  <circle cx="120" cy="100" r="120" fill="#6366f1" opacity="0.04"/>
+  <circle cx="1100" cy="620" r="100" fill="#8b5cf6" opacity="0.03"/>
+  <circle cx="950" cy="130" r="80" fill="#a78bfa" opacity="0.03"/>
+
+  <!-- Accent line at bottom -->
+  <rect x="0" y="754" width="1270" height="6" fill="url(#accent)" opacity="0.5"/>
+
+  <!-- === KEY LOGO — exact copy from logo-key.svg, repositioned and scaled === -->
+  <g transform="translate(100, 120) scale(1.3)">
+    <!-- Glow behind key -->
+    <g opacity="0.4" filter="url(#glow)">
+      <path d="
+        M 200,80
+        L 242,104 L 242,160 L 210,178
+        L 210,312 L 190,312 L 190,178
+        L 158,160 L 158,104
+        Z
+      " fill="#818cf8"/>
+    </g>
+
+    <!-- Key shape -->
+    <path fill-rule="evenodd" fill="url(#keyGrad)" d="
+      M 200,80
+      L 242,104
+      L 242,160
+      L 210,178
+      L 210,242
+      L 242,242
+      L 242,258
+      L 210,258
+      L 210,270
+      L 232,270
+      L 232,286
+      L 210,286
+      L 210,298
+      L 242,298
+      L 242,314
+      L 190,314
+      L 190,178
+      L 158,160
+      L 158,104
+      Z
+
+      M 200,104
+      L 222,118
+      L 222,146
+      L 200,160
+      L 178,146
+      L 178,118
+      Z
+    "/>
+
+    <!-- Node dot at center of bow -->
+    <circle cx="200" cy="132" r="8" fill="#c4b5fd" filter="url(#nodeGlow)" opacity="0.75"/>
+    <circle cx="200" cy="132" r="3.5" fill="white" opacity="0.2"/>
+
+    <!-- Node dots at teeth tips -->
+    <circle cx="242" cy="250" r="4" fill="#a5b4fc" filter="url(#nodeGlow)" opacity="0.5"/>
+    <circle cx="232" cy="278" r="3.5" fill="#9590d8" filter="url(#nodeGlow)" opacity="0.4"/>
+    <circle cx="242" cy="306" r="4" fill="#818cf8" filter="url(#nodeGlow)" opacity="0.5"/>
+  </g>
+
+  <!-- === RIGHT SIDE CONTENT — pushed right with more margin === -->
+
+  <!-- Title text -->
+  <text x="620" y="280" font-family="'JetBrains Mono', 'JetBrains Mono', ui-monospace, monospace"
+        font-size="76" font-weight="700" fill="#e0e7ff" letter-spacing="-2">
+    keyoku
+  </text>
+
+  <!-- Tagline -->
+  <text x="620" y="340" font-family="'Inter', ui-sans-serif, sans-serif"
+        font-size="28" fill="#a5b4fc" letter-spacing="0.5" opacity="0.9">
+    Make any AI agent autonomous
+  </text>
+
+  <!-- Feature pills -->
+  <g transform="translate(620, 390)">
+    <rect x="0" y="0" width="120" height="36" rx="18" fill="#6366f1" opacity="0.15"/>
+    <text x="60" y="23" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" text-anchor="middle">Memory</text>
+
+    <rect x="135" y="0" width="150" height="36" rx="18" fill="#6366f1" opacity="0.15"/>
+    <text x="210" y="23" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" text-anchor="middle">Knowledge Graph</text>
+
+    <rect x="300" y="0" width="130" height="36" rx="18" fill="#6366f1" opacity="0.15"/>
+    <text x="365" y="23" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" text-anchor="middle">Heartbeat</text>
+
+    <rect x="445" y="0" width="130" height="36" rx="18" fill="#6366f1" opacity="0.15"/>
+    <text x="510" y="23" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" text-anchor="middle">Autonomy</text>
+  </g>
+
+  <!-- Install command -->
+  <g transform="translate(620, 470)">
+    <rect x="0" y="0" width="400" height="50" rx="8" fill="#1a1535" stroke="#2d2654" stroke-width="1"/>
+    <text x="18" y="31" font-family="'JetBrains Mono', 'JetBrains Mono', ui-monospace, monospace" font-size="17" fill="#6366f1">$</text>
+    <text x="40" y="31" font-family="'JetBrains Mono', 'JetBrains Mono', ui-monospace, monospace" font-size="17" fill="#c4b5fd">npx @keyoku/openclaw init</text>
+  </g>
+
+  <!-- Subtext -->
+  <text x="620" y="575" font-family="'Inter', ui-sans-serif, sans-serif"
+        font-size="16" fill="#818cf8" opacity="0.5" letter-spacing="1">
+    TypeScript SDK  |  OpenClaw Plugin  |  Local Go Engine
+  </text>
+
+  <!-- Grid dots -->
+  <g opacity="0.04">
+    <circle cx="50" cy="30" r="1" fill="#a78bfa"/><circle cx="150" cy="30" r="1" fill="#a78bfa"/>
+    <circle cx="250" cy="30" r="1" fill="#a78bfa"/><circle cx="350" cy="30" r="1" fill="#a78bfa"/>
+    <circle cx="50" cy="730" r="1" fill="#a78bfa"/><circle cx="150" cy="730" r="1" fill="#a78bfa"/>
+    <circle cx="250" cy="730" r="1" fill="#a78bfa"/><circle cx="350" cy="730" r="1" fill="#a78bfa"/>
+    <circle cx="950" cy="30" r="1" fill="#a78bfa"/><circle cx="1050" cy="30" r="1" fill="#a78bfa"/>
+    <circle cx="1150" cy="30" r="1" fill="#a78bfa"/>
+    <circle cx="950" cy="730" r="1" fill="#a78bfa"/><circle cx="1050" cy="730" r="1" fill="#a78bfa"/>
+    <circle cx="1150" cy="730" r="1" fill="#a78bfa"/>
+  </g>
+</svg>

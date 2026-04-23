@@ -31,7 +31,7 @@
   </defs>
 
   <!-- Background -->
-  <rect width="400" height="400" rx="80" fill="url(#bg)"/>
+  <rect width="400" height="400" fill="url(#bg)"/>
 
   <!-- Ambient glow -->
   <circle cx="200" cy="160" r="130" fill="url(#centerGlow)"/>

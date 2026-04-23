@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1270" height="760" viewBox="0 0 1270 760">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap');
+    </style>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#100b20" />
+      <stop offset="50%" style="stop-color:#161035" />
+      <stop offset="100%" style="stop-color:#0e0c1c" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1" />
+      <stop offset="100%" style="stop-color:#a78bfa" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1270" height="760" fill="url(#bg)"/>
+  <rect x="0" y="754" width="1270" height="6" fill="url(#accent)" opacity="0.5"/>
+
+  <!-- Subtle orbs -->
+  <circle cx="635" cy="380" r="250" fill="#6366f1" opacity="0.03"/>
+
+  <!-- Title -->
+  <text x="635" y="70" font-family="'Inter', ui-sans-serif, sans-serif"
+        font-size="36" font-weight="600" fill="#e0e7ff" text-anchor="middle" letter-spacing="-0.5">
+    One Command to Get Started
+  </text>
+
+  <!-- Terminal window -->
+  <g transform="translate(185, 120)">
+    <!-- Window chrome -->
+    <rect x="0" y="0" width="900" height="480" rx="12" fill="#0d0b18" stroke="#2d2654" stroke-width="1.5"/>
+    <rect x="0" y="0" width="900" height="40" rx="12" fill="#1a1535"/>
+    <rect x="0" y="28" width="900" height="12" fill="#1a1535"/>
+    <!-- Window dots -->
+    <circle cx="24" cy="20" r="6" fill="#ef4444" opacity="0.7"/>
+    <circle cx="44" cy="20" r="6" fill="#f59e0b" opacity="0.7"/>
+    <circle cx="64" cy="20" r="6" fill="#22c55e" opacity="0.7"/>
+    <text x="450" y="25" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" fill="#818cf8" text-anchor="middle" opacity="0.5">Terminal</text>
+
+    <!-- Terminal content -->
+    <!-- Command -->
+    <text x="30" y="80" font-family="'JetBrains Mono', 'JetBrains Mono', ui-monospace, monospace" font-size="16" fill="#6366f1">$</text>
+    <text x="50" y="80" font-family="'JetBrains Mono', 'JetBrains Mono', ui-monospace, monospace" font-size="16" fill="#e0e7ff">npx @keyoku/openclaw init</text>
+
+    <!-- Output -->
+    <text x="30" y="120" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#22c55e" opacity="0.8">Detecting OpenClaw installation...</text>
+    <text x="30" y="148" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#22c55e" opacity="0.8">Found OpenClaw at ~/.openclaw</text>
+    <text x="30" y="188" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" opacity="0.8">Downloading keyoku-engine (darwin-arm64)...</text>
+    <text x="30" y="216" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#22c55e" opacity="0.8">keyoku-engine installed at ~/.keyoku/bin/keyoku-server</text>
+    <text x="30" y="256" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" opacity="0.8">Registering plugin in openclaw.json...</text>
+    <text x="30" y="284" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#22c55e" opacity="0.8">Plugin registered successfully</text>
+    <text x="30" y="324" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#a5b4fc" opacity="0.8">Migrating existing memories...</text>
+    <text x="30" y="352" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#22c55e" opacity="0.8">12 memories imported from MEMORY.md</text>
+    <text x="30" y="392" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#22c55e">Ready. Keyoku is now active in OpenClaw.</text>
+    <text x="30" y="430" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#818cf8" opacity="0.5">$</text>
+    <rect x="40" y="418" width="8" height="16" fill="#6366f1" opacity="0.6"/>
+  </g>
+
+  <!-- What the init script does -->
+  <g transform="translate(185, 640)">
+    <circle cx="15" cy="8" r="5" fill="#22c55e" opacity="0.6"/>
+    <text x="30" y="13" font-family="'Inter', ui-sans-serif, sans-serif" font-size="14" fill="#818cf8" opacity="0.7">Detects OpenClaw</text>
+
+    <circle cx="215" cy="8" r="5" fill="#22c55e" opacity="0.6"/>
+    <text x="230" y="13" font-family="'Inter', ui-sans-serif, sans-serif" font-size="14" fill="#818cf8" opacity="0.7">Downloads Go engine</text>
+
+    <circle cx="430" cy="8" r="5" fill="#22c55e" opacity="0.6"/>
+    <text x="445" y="13" font-family="'Inter', ui-sans-serif, sans-serif" font-size="14" fill="#818cf8" opacity="0.7">Registers plugin</text>
+
+    <circle cx="615" cy="8" r="5" fill="#22c55e" opacity="0.6"/>
+    <text x="630" y="13" font-family="'Inter', ui-sans-serif, sans-serif" font-size="14" fill="#818cf8" opacity="0.7">Migrates memories</text>
+
+    <circle cx="810" cy="8" r="5" fill="#22c55e" opacity="0.6"/>
+    <text x="825" y="13" font-family="'Inter', ui-sans-serif, sans-serif" font-size="14" fill="#818cf8" opacity="0.7">Zero config needed</text>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="635" y="710" font-family="'Inter', ui-sans-serif, sans-serif"
+        font-size="16" fill="#a5b4fc" text-anchor="middle" opacity="0.6">
+    Works with your existing OpenClaw setup. Nothing to configure.
+  </text>
+</svg>
