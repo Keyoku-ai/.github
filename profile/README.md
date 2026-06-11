@@ -1,9 +1,9 @@
 <div align="center">
 
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg">
-    <img alt="keyoku" src="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg" width="800">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-dark.svg?v=2">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg?v=2">
+    <img alt="keyoku" src="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg?v=2" width="800">
   </picture>
 
   <br><br>
@@ -18,7 +18,7 @@
 
 Keyoku watches how you work in Claude Code, Cursor, or Codex, learns your repeated patterns, and turns them into workflows you run with one command. Approve once — never re-explain a process again.
 
-One command to install. Zero config to start. Everything stays on your machine.
+One command to install. Works out of the box — no API key required. Add a Gemini or Anthropic key when you want model-refined suggestions. Everything stays on your machine.
 
 ```bash
 npx keyoku init
