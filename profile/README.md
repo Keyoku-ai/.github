@@ -1,15 +1,15 @@
 <div align="center">
 
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-dark.svg?v=4">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg?v=4">
-    <img alt="keyoku" src="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg?v=4" width="800">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-dark.svg?v=5">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg?v=5">
+    <img alt="keyoku" src="https://raw.githubusercontent.com/keyoku-ai/.github/main/assets/banner-light.svg?v=5" width="800">
   </picture>
 
   <br><br>
 
   <p>
-    <strong>The workflow harness for coding agents.</strong>
+    <strong>The harness with muscle memory.</strong>
   </p>
 
 </div>
